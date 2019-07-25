@@ -9,7 +9,7 @@ First add as a dependency as usual...
 ```elixir
 def deps do
   [
-    {:prometheus_def, "~> 0.0.0"}
+    {:prometheus_def, "~> 0.0.0-alpha.1"}
   ]
 end
 ```
