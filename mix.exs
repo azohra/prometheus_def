@@ -1,11 +1,11 @@
-defmodule Metrex.MixProject do
+defmodule PrometheusDef.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :metrex,
-      version: "0.1.0",
-      elixir: "~> 1.9",
+      app: :prometheus_def,
+      version: "0.0.0",
+      elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]

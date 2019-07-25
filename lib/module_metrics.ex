@@ -1,4 +1,4 @@
-defmodule Metrex.ModuleMetrics do
+defmodule PrometheusDef.ModuleMetrics do
 
   use Prometheus.Metric
 
@@ -22,7 +22,7 @@ defmodule Metrex.ModuleMetrics do
       Generated for counter '#{unquote(name)}'.
       """
       def unquote(func_name)(unquote_splicing(label_list)) do
-        Metrex.increment_counter(unquote(name), [unquote_splicing(label_list)])
+        PrometheusDef.increment_counter(unquote(name), [unquote_splicing(label_list)])
       end
 
     end
@@ -43,7 +43,7 @@ defmodule Metrex.ModuleMetrics do
       Generated for histogram '#{unquote(name)}'.
       """
       def unquote(func_name)(unquote_splicing(label_list), var!(observed_var)) do
-        Metrex.observe_histogram(unquote(name), [unquote_splicing(label_list)], var!(observed_var))
+        PrometheusDef.observe_histogram(unquote(name), [unquote_splicing(label_list)], var!(observed_var))
       end
 
     end

@@ -1,6 +1,6 @@
-defmodule Metrex do
+defmodule PrometheusDef do
   @moduledoc """
-  Documentation for Metrex.
+  Documentation for PrometheusDef.
   """
 
   use Prometheus
@@ -8,9 +8,9 @@ defmodule Metrex do
   @doc false
   defmacro __using__(_opts \\ []) do
     quote do
-      import Metrex.ModuleMetrics, only: [defmetric: 3]
+      import PrometheusDef.ModuleMetrics, only: [defmetric: 3]
       Module.register_attribute(__MODULE__, :metric_definitions, accumulate: true)
-      @before_compile Metrex
+      @before_compile PrometheusDef
     end
   end
 
@@ -20,7 +20,7 @@ defmodule Metrex do
 
       def setup_metrics() do
         @metric_definitions
-        |> Enum.each(&(Metrex.ModuleMetrics.initialize_metric(&1)))
+        |> Enum.each(&(PrometheusDef.ModuleMetrics.initialize_metric(&1)))
       end
 
     end
