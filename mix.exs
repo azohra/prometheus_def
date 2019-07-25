@@ -30,7 +30,7 @@ defmodule PrometheusDef.MixProject do
 
   defp package() do
     [
-      licences: ["MIT"],
+      licenses: ["MIT"],
       links: %{
         "Azohra" => "https://github.com/azohra"
       }
